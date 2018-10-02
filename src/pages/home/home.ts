@@ -13,7 +13,7 @@ export class HomePage {
 
   }
   next(){
-    if(this.id == "admin" && this.pass == "1234"){
+    if(this.id == "1" && this.pass == "1"){
       this.navCtrl.push(DetailPage)
     }
     else{
