@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 /**
  * Generated class for the DetailPage page.
@@ -17,8 +18,14 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class DetailPage {
   c:any;
+  text:any;
   
-  constructor(public camera:Camera, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+  constructor(public tts: TextToSpeech, public camera:Camera, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+  }
+  textS(){
+    this.tts.speak(this.text)
+      .then(() => console.log('Success'))
+      .catch((reason: any) => console.log(reason));
   }
 
   ionViewDidLoad() {
@@ -41,5 +48,7 @@ export class DetailPage {
      // Handle error
     });
   }
+
+
 
 }
