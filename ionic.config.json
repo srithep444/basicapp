@@ -1,0 +1,7 @@
+{
+  "name": "basicapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
